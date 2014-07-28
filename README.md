@@ -22,7 +22,7 @@ Working
 
 Author
 ---------------
-Praveen Kumar Pendyala <<praveen@praveenkumar.co.in>>
+Praveen Kumar Pendyala <<praveen@praveenkumar.co.in>> <br>
 <http://praveenkumar.co.in>
 
 
