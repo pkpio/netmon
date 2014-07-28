@@ -5,10 +5,29 @@
 # License  : GPL v2
 ######################################
 
-hit=" ---- hit   ----- "
-fail=" ---- fail"
 
-echo "Ping failures to open dns (208.67.222.222)" >log
+#############    Parameters    #############
+
+# Ping destination. Default: 208.67.222.222
+host=208.67.222.222
+
+# Wait time (seconds) before next ping. Default: 57
+wait=1
+
+# Count in each ping (ping -c C). Default: 2
+# Average of these many pings will be logged
+c=2  #Pings per test
+
+# Message appended to timestamp when it's a hit
+hit_msg=" ---- hit   ----- "
+
+# Message appended to timestamp when it's a fail
+fail_msg=" ---- fail"
+
+############  END OF PARAMS ##############
+
+
+echo "Ping failures to " $host >log
 
 # Initial messages
 echo -e "\nNetwork monitoring started. Check logs in pinglog file."
@@ -20,20 +39,19 @@ while true; do
 
 	# Attempt ping and extract times to $result.
 	# Ping errors, if any, are appended to log
-	result=$(ping -c 1 208.67.222.222 2>>log | tail -1 | awk '{print $4}')
+	result=$(ping -c $c $host 2>>log | tail -1 | awk '{print $4}')
 
 	# Check if ping actually returned times
 	if [ "$result" != "" ]; then
-		# extract avg. time
 		avg=$(echo $result | cut -d '/' -f 2)       
-		echo $(date)$hit$avg" ms"  >> log
+		echo $(date) $hit_msg $avg" ms"  >> log
 
 	# Handle errors
 	else
-		echo $(date)$fail  >> log
+		echo $(date) $fail_msg  >> log
 	fi
 
-	# wait for a 57 secs
-	sleep 57
+	# wait before next run
+	sleep $wait
 
 done
