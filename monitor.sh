@@ -12,7 +12,7 @@
 host=208.67.222.222
 
 # Wait time (seconds) before next ping. Default: 57
-wait=1
+wait=57
 
 # Count in each ping (ping -c C). Default: 2
 # Average of these many pings will be logged
