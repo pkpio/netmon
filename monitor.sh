@@ -27,10 +27,10 @@ fail_msg=" ---- fail"
 ############  END OF PARAMS ##############
 
 
-echo "Ping failures to " $host >log
+echo "Ping monitoring with " $host >log
 
 # Initial messages
-echo -e "\nNetwork monitoring started. Check logs in pinglog file."
+echo -e "\nNetwork monitoring started. Check log file."
 echo -e "Ping running...."
 echo -e "\n\n ========= Logging started ========== \n" >>log
 
