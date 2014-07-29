@@ -21,6 +21,16 @@ to monitor a device or server or website, change the parameters to ping.
 2. There are a bunch of parameters with comments. It should be clear :)
 
 
+ISP login
+---------------
+This is disabled by default. To enable, set the following params (in ```monitor.sh```),
+1. isp_login=1
+2. isp_url="your-isp-login-url"
+3. isp_usr="your-isp-username"
+4. isp_pwd="your-isp-password"
+More related params can also be found in the script. 
+
+
 Working
 ---------------
 1. Logs are monitored into 'log' file in the script folder.
