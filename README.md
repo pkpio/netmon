@@ -12,6 +12,16 @@ chmod +x monitor.sh
 ./monitor.sh
 ``` 
 
+Background monitoring
+--------------
+To do background monitoring without having to keep a terminal open.
+Execute,
+
+```
+screen -dmS netmon ./monitor.sh
+```
+
+
 Parameters
 ---------------
 The default setup should work well for network monitoring. However if you wish
