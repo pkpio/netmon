@@ -1,11 +1,12 @@
 network-monitor
 ===============
 
-Monitor your network uptime and downtime. Webserver or any device uptime. Also supports auto-login to your ISP (Internet Service Provider).
+Monitor your network uptime and downtime. Webserver or any device uptime. 
+Also supports auto-login to your ISP (Internet Service Provider).
 
 How-to-use
 ---------------
-Enter network-monitor folder in terminal and execute
+cd netmon in terminal and execute
 
 ```
 chmod +x monitor.sh
@@ -14,11 +15,18 @@ chmod +x monitor.sh
 
 Background monitoring
 --------------
-To do background monitoring without having to keep a terminal open.
-Execute,
+To start background monitoring, execute,
 
 ```
 screen -dmS netmon ./monitor.sh
+```
+
+You may close your terminal after this.
+
+
+To stop background monitoring, execute,
+```
+screen -r netmon
 ```
 
 
@@ -45,7 +53,7 @@ More related params can also be found in the script.
 
 Working
 ---------------
-1. Logs are monitored into 'log' file in the script folder.
+1. Logs are monitored into 'log' file created in the dir from where you started the script
 2. Closing the terminal would stop monitoring
 
 

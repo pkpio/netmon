@@ -1,7 +1,7 @@
 ######################################
 # Author   : Praveen Kumar Pendyala
 # Created  : 28 June 2014
-# Modified : 29 June 2014
+# Modified : 30 June 2014
 # License  : GPL v2
 ######################################
 
@@ -9,10 +9,11 @@
 #############    Parameters    #############
 
 # Ping destination. Default: 208.67.222.222
+# Default is open dns. Edit to your website or device ip to monitor them.
 host=208.67.222.222
 
 # Does your ISP require login and it logs you after sometime? Default=0
-# If set to true, update values in ISPs with logging below.
+# If set to 1, update params in ISPs with login section below.
 isp_login=0
 
 # Wait time (seconds) before next ping. Default: 57
@@ -29,7 +30,7 @@ hit_msg=" ---- hit   ----- "
 fail_msg=" ---- fail"
 
 
-### For ISPs with loging ###
+### For ISPs with login ###
 
 # For ISPs that require login, we may get continuous fails when the user has 
 # been logged out automatically after certain time. In such cases, we try to 
@@ -60,9 +61,6 @@ isp_cookies="--save-cookies cookies.txt --keep-session-cookies"
 # Once this = $fail_limit we attempt an ISP login (if enabled).
 scs_fails=0
 
-# Build ISP wget url
-
-
 echo "Ping monitoring with " $host >log
 
 # Initial messages
@@ -73,7 +71,7 @@ echo -e "\n\n ========= Logging started ========== \n" >>log
 # Continious monitoring starts
 while true; do
 
-	# Attempt ping and extract times to $result.
+	# Attempt ping and extract times to result.
 	# Ping errors, if any, are appended to log
 	result=$(ping -c $c $host 2>>log | tail -1 | awk '{print $4}')
 
