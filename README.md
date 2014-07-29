@@ -1,7 +1,7 @@
 network-monitor
 ===============
 
-Monitor your network uptime and downtime. Webserver or any device uptime. 
+Monitor your network / website / device uptime. 
 Also supports auto-login to your ISP (Internet Service Provider).
 
 How-to-use
@@ -21,9 +21,6 @@ To start background monitoring, execute,
 screen -dmS netmon ./monitor.sh
 ```
 
-You may close your terminal after this.
-
-
 To stop background monitoring, execute,
 ```
 screen -r netmon
@@ -36,7 +33,7 @@ The default setup should work well for network monitoring. However if you wish
 to monitor a device or server or website, change the parameters to ping. 
 
 1. Open monitor.sh in a text editor
-2. There are a bunch of parameters with comments. It should be clear :)
+2. There are a bunch of parameters with comments. It should be clear.
 
 
 ISP login
