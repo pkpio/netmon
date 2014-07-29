@@ -1,8 +1,7 @@
 network-monitor
 ===============
 
-Monitor your network uptime and downtime. Webserver or any device uptime.
-
+Monitor your network uptime and downtime. Webserver or any device uptime. Also supports auto-login to your ISP (Internet Service Provider).
 
 How-to-use
 ---------------
@@ -17,6 +16,7 @@ Parameters
 ---------------
 The default setup should work well for network monitoring. However if you wish
 to monitor a device or server or website, change the parameters to ping. 
+
 1. Open monitor.sh in a text editor
 2. There are a bunch of parameters with comments. It should be clear :)
 
@@ -24,10 +24,12 @@ to monitor a device or server or website, change the parameters to ping.
 ISP login
 ---------------
 This is disabled by default. To enable, set the following params (in ```monitor.sh```),
+
 1. isp_login=1
 2. isp_url="your-isp-login-url"
 3. isp_usr="your-isp-username"
 4. isp_pwd="your-isp-password"
+
 More related params can also be found in the script. 
 
 
