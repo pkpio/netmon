@@ -1,4 +1,4 @@
-network-monitor
+netmon
 ===============
 
 Monitor your network / website / device uptime. 
